@@ -37,7 +37,7 @@
   <div class="card mb-3" style="margin-top: 10rem !important;">
     <div class="row g-0 d-flex align-items-center">
       <div class="col-lg-4 d-none d-lg-flex">
-        <img src="{{ url('dist\img\logging_page.jpg') }}" alt="Logging_Image"
+        <img src="{{ url('dist\img\logging_page.png') }}" alt="Logging_Image"
           class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
       </div>
       <div class="col-lg-8">

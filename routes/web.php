@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ManagementStaffController;
 
 // Route::get('admin/dashboard', function () {
 //     return view('welcome');
@@ -18,3 +19,10 @@ Route::get('admin/dashboard', function () {
 });
 
 Route::get('admin/admin/list', [AdminController::class, 'index']);
+
+//management staff
+Route::get('managementStaff/dashboard', function () {
+    return view('managementStaff.dashboard');
+});
+
+Route::get('admin/managementStaff/list', [ManagementStaffController::class, 'index']);
