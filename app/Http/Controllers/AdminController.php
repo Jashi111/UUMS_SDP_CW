@@ -160,4 +160,12 @@ class AdminController extends Controller
 
         return redirect('admin/admin/list')->with('success', 'Admin User Updated Succesfully');
     }
+
+    public function destroy(string $id)
+    {
+        $user = User::getRecByID($id);
+        $user->delete();
+
+        return redirect('admin/admin/list')->with('success', 'Admin User Deleted Succesfully');
+    }
 }

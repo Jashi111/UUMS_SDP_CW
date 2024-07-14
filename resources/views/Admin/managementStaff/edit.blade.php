@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Edit Admin Info</h1>
+            <h1>Edit Staff Info</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -23,7 +23,7 @@
                     <div class="card-tools">
                       <div class="input-group input-group-sm" style="width: 150px;">
                         <div>
-                          <a href="{{ url('admin/admin/list') }}" class="btn btn-primary float-end"><i class="fas fa-backward"></i> Back</a>
+                          <a href="{{ url('admin/managementStaff/list') }}" class="btn btn-primary float-end"><i class="fas fa-backward"></i> Back</a>
                         </div>
                       </div>
                     </div>

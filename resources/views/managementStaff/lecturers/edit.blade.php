@@ -23,7 +23,7 @@
                     <div class="card-tools">
                       <div class="input-group input-group-sm" style="width: 150px;">
                         <div>
-                          <a href="{{ url('admin/lecturers/list') }}" class="btn btn-primary float-end"><i class="fas fa-backward"></i> Back</a>
+                          <a href="{{ url('managementStaff/lecturers/list') }}" class="btn btn-primary float-end"><i class="fas fa-backward"></i> Back</a>
                         </div>
                       </div>
                     </div>

@@ -68,5 +68,11 @@ class AuthController extends Controller
         return redirect(url(''));
 
     }
+
+    public function prereg(){
+
+        return view('auth.prereg');
+
+    }
     
 }

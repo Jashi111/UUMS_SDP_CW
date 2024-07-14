@@ -53,29 +53,11 @@
               <label class="form-label" for="email">Email</label>
             </div>
 
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <input type="password" name="password" id="password" class="form-control" placeholder="Password" required />
-              <label class="form-label" for="password">Password</label>
-            </div>
 
-            <div class="row mb-4">
-              <div class="col d-flex justify-content-center">
-                <!-- Checkbox -->
-                <div class="form-check">
-                  <input class="form-check-input" name="remember" type="checkbox" id="remember" />
-                  <label class="form-check-label" for="remember"> Remember me </label>
-                </div>
-              </div>
-            </div>
 
             <!-- Submit button -->
-            <input type="submit" class="btn btn-primary btn-block mb-4" value="Sign in">
+            <input type="submit" class="btn btn-primary btn-block mb-4" value="Verify Email">
           </form>
-
-          <a href="{{ url('students/prereg') }}" class="btn btn-success btn-block mb-4">Register</a>
-
-
         </div>
       </div>
     </div>

@@ -15,6 +15,9 @@ Route::get('/', [AuthController::class, 'login']);
 Route::post('login', [AuthController::class, 'authLogin']);
 Route::get('logout', [AuthController::class, 'authLogout']);
 
+
+Route::get('students/prereg', [AuthController::class, 'preReg']);
+
 //admin
 Route::get('admin/dashboard', function () {
     return view('admin.dashboard');
@@ -26,6 +29,7 @@ Route::post('admin/admin/add', [AdminController::class, 'store']);
 Route::get('admin/admin/{id}/view', [AdminController::class, 'show']);
 Route::get('admin/admin/{id}/edit', [AdminController::class, 'edit']);
 Route::post('admin/admin/{id}/edit', [AdminController::class, 'update']);
+Route::get('admin/admin/{id}/delete', [AdminController::class, 'destroy']);
 
 //management staff
 Route::get('managementStaff/dashboard', function () {
@@ -38,6 +42,7 @@ Route::post('admin/managementStaff/add', [ManagementStaffController::class, 'sto
 Route::get('admin/managementStaff/{id}/view', [ManagementStaffController::class, 'show']);
 Route::get('admin/managementStaff/{id}/edit', [ManagementStaffController::class, 'edit']);
 Route::post('admin/managementStaff/{id}/edit', [ManagementStaffController::class, 'update']);
+Route::get('admin/managementStaff/{id}/delete', [ManagementStaffController::class, 'destroy']);
 
 //Lecturer
 Route::get('lecturers/dashboard', function () {
@@ -50,6 +55,7 @@ Route::post('admin/lecturers/add', [LecturerController::class, 'store']);
 Route::get('admin/lecturers/{id}/view', [LecturerController::class, 'show']);
 Route::get('admin/lecturers/{id}/edit', [LecturerController::class, 'edit']);
 Route::post('admin/lecturers/{id}/edit', [LecturerController::class, 'update']);
+Route::get('admin/lecturers/{id}/delete', [LecturerController::class, 'destroy']);
 
 //Students
 Route::get('students/dashboard', function () {
@@ -57,6 +63,8 @@ Route::get('students/dashboard', function () {
 });
 
 Route::get('admin/students/list', [StudentsController::class, 'index']);
+Route::get('admin/students/add', [StudentsController::class, 'create']);
+Route::post('admin/students/add', [StudentsController::class, 'store']);
 
 //Management Staff Login
 Route::get('managementStaff/lecturers/list', [LecturerController::class, 'index']);
@@ -65,3 +73,7 @@ Route::post('managementStaff/lecturers/add', [LecturerController::class, 'store'
 Route::get('managementStaff/lecturers/{id}/view', [LecturerController::class, 'show']);
 Route::get('managementStaff/lecturers/{id}/edit', [LecturerController::class, 'edit']);
 Route::post('managementStaff/lecturers/{id}/edit', [LecturerController::class, 'update']);
+
+Route::get('managementStaff/students/list', [StudentsController::class, 'index']);
+Route::get('managementStaff/students/add', [StudentsController::class, 'create']);
+Route::post('managementStaff/students/add', [StudentsController::class, 'store']);
