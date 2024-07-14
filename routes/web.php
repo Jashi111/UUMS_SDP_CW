@@ -50,3 +50,8 @@ Route::get('students/dashboard', function () {
 });
 
 Route::get('admin/students/list', [StudentsController::class, 'index']);
+
+//Management Staff Login
+Route::get('managementStaff/lecturers/list', [LecturerController::class, 'index']);
+Route::get('managementStaff/lecturers/add', [LecturerController::class, 'create']);
+Route::post('managementStaff/lecturers/add', [LecturerController::class, 'store']);

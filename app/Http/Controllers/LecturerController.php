@@ -38,7 +38,7 @@ class LecturerController extends Controller
             'password' => 'required|string',
 
         ]);
-        $fileName = 'logging_page.png';
+        $fileName = '123223.jpg';
 
         if ($request->has('prof_pic')) {
             

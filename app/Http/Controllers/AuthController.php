@@ -18,7 +18,7 @@ class AuthController extends Controller
             }
             elseif(Auth::user()->role == 'Staff'){
 
-                return redirect('staff/dashboard');
+                return redirect('managementStaff/dashboard');
             }
             elseif(Auth::user()->role == 'Lecturer'){
 
@@ -42,7 +42,7 @@ class AuthController extends Controller
             }
             elseif(Auth::user()->role == 'Staff' && Auth::user()->status == "Active"){
 
-                return redirect('staff/dashboard');
+                return redirect('managementStaff/dashboard');
             }
             elseif(Auth::user()->role == 'Lecturer' && Auth::user()->status == "Active"){
 
