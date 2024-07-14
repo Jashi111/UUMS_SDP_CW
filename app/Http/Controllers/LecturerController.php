@@ -73,4 +73,20 @@ class LecturerController extends Controller
 
         return redirect('admin/lecturers/list')->with('success', 'Lecturer Created Succesfully');
     } 
+
+    public function show(string $id)
+    {
+        $data['fetchedRecord'] = User::getRecByID($id);
+
+        if (!empty($data['fetchedRecord'])) {
+            
+            $data['headerTitle'] = 'Lecturer Info.';
+            return view('admin.lecturers.view', $data);
+
+        } else {
+            
+            abort(404);
+        }
+        
+    } 
 }

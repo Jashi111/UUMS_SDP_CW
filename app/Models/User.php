@@ -143,4 +143,9 @@ class User extends Authenticatable
 
         return $return;
     }
+
+    static public function getRecByID($id){
+
+        return self::findOrFail($id);
+    }
 }

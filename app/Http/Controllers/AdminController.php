@@ -72,5 +72,21 @@ class AdminController extends Controller
         $user->save();
 
         return redirect('admin/admin/list')->with('success', 'Admin User Created Succesfully');
-    }   
+    }  
+    
+    public function show(string $id)
+    {
+        $data['fetchedRecord'] = User::getRecByID($id);
+
+        if (!empty($data['fetchedRecord'])) {
+            
+            $data['headerTitle'] = 'Admin User Info.';
+            return view('admin.admin.view', $data);
+
+        } else {
+            
+            abort(404);
+        }
+        
+    } 
 }

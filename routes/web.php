@@ -23,6 +23,7 @@ Route::get('admin/dashboard', function () {
 Route::get('admin/admin/list', [AdminController::class, 'index']);
 Route::get('admin/admin/add', [AdminController::class, 'create']);
 Route::post('admin/admin/add', [AdminController::class, 'store']);
+Route::get('admin/admin/{id}/view', [AdminController::class, 'show']);
 
 //management staff
 Route::get('managementStaff/dashboard', function () {
@@ -32,6 +33,7 @@ Route::get('managementStaff/dashboard', function () {
 Route::get('admin/managementStaff/list', [ManagementStaffController::class, 'index']);
 Route::get('admin/managementStaff/add', [ManagementStaffController::class, 'create']);
 Route::post('admin/managementStaff/add', [ManagementStaffController::class, 'store']);
+Route::get('admin/managementStaff/{id}/view', [ManagementStaffController::class, 'show']);
 
 //Lecturer
 Route::get('lecturers/dashboard', function () {
@@ -41,8 +43,8 @@ Route::get('lecturers/dashboard', function () {
 Route::get('admin/lecturers/list', [LecturerController::class, 'index']);
 Route::get('admin/lecturers/add', [LecturerController::class, 'create']);
 Route::post('admin/lecturers/add', [LecturerController::class, 'store']);
+Route::get('admin/lecturers/{id}/view', [LecturerController::class, 'show']);
 
-Route::get('admin/lecturers/list', [LecturerController::class, 'index']);
 
 //Students
 Route::get('students/dashboard', function () {

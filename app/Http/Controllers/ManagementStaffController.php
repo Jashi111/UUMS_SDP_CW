@@ -74,4 +74,20 @@ class ManagementStaffController extends Controller
 
         return redirect('admin/managementStaff/list')->with('success', 'Staff User Created Succesfully');
     } 
+
+    public function show(string $id)
+    {
+        $data['fetchedRecord'] = User::getRecByID($id);
+
+        if (!empty($data['fetchedRecord'])) {
+            
+            $data['headerTitle'] = 'Management Staff Info.';
+            return view('admin.managementStaff.view', $data);
+
+        } else {
+            
+            abort(404);
+        }
+        
+    } 
 }
