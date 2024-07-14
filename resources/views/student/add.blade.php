@@ -27,7 +27,7 @@
                       </div>
                     </div>
                   </div>
-              <form action="" method="post" enctype="multipart/form-data">
+              <form action="{{ url('students/prereg/save') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="row">
@@ -100,6 +100,18 @@
                     <div class="form-group col-md-6">
                       <label for="address">Address</label>
                       <textarea class="form-control" name="address" id="address" rows="4" value="{{ old('address') }}" placeholder="Enter Address"></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="academic_year">Academic Year <span style="color: red">*</span></label>
+                      <input type="text" class="form-control" name="academic_year" id="academic_year" value="{{ old('academic_year') }}" placeholder="Enter Academic Year">
+                      <div style="color: rgb(196, 3, 3)">{{ $errors->first('academic_year') }}</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="school">School <span style="color: red">*</span></label>
+                      <input type="text" class="form-control" name="school" id="school" value="{{ old('school') }}" placeholder="Enter School Name">
+                      <div style="color: rgb(196, 3, 3)">{{ $errors->first('school') }}</div>
                     </div>
                   </div>
                   <div class="row">
