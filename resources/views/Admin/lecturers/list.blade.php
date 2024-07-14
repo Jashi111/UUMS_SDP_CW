@@ -62,7 +62,7 @@
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <div class="row">
-                      <a href="{{ url('admin/lecturer/add') }}" class="btn btn-primary float-end"><i class="fas fa-plus"></i> Add New Lecturer</a>
+                      <a href="{{ url('admin/lecturers/add') }}" class="btn btn-primary float-end"><i class="fas fa-plus"></i> Add New Lecturer</a>
                     </div>
                   </div>
                 </div>

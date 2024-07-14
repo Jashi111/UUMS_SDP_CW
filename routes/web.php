@@ -39,6 +39,10 @@ Route::get('lecturers/dashboard', function () {
 });
 
 Route::get('admin/lecturers/list', [LecturerController::class, 'index']);
+Route::get('admin/lecturers/add', [LecturerController::class, 'create']);
+Route::post('admin/lecturers/add', [LecturerController::class, 'store']);
+
+Route::get('admin/lecturers/list', [LecturerController::class, 'index']);
 
 //Students
 Route::get('students/dashboard', function () {
