@@ -30,6 +30,8 @@ Route::get('managementStaff/dashboard', function () {
 });
 
 Route::get('admin/managementStaff/list', [ManagementStaffController::class, 'index']);
+Route::get('admin/managementStaff/add', [ManagementStaffController::class, 'create']);
+Route::post('admin/managementStaff/add', [ManagementStaffController::class, 'store']);
 
 //Lecturer
 Route::get('lecturers/dashboard', function () {
