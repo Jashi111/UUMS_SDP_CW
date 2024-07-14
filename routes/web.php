@@ -21,6 +21,8 @@ Route::get('admin/dashboard', function () {
 });
 
 Route::get('admin/admin/list', [AdminController::class, 'index']);
+Route::get('admin/admin/add', [AdminController::class, 'create']);
+Route::post('admin/admin/add', [AdminController::class, 'store']);
 
 //management staff
 Route::get('managementStaff/dashboard', function () {
