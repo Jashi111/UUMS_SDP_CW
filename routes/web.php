@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ManagementStaffController;
+use App\Http\Controllers\LecturerController;
 
 // Route::get('admin/dashboard', function () {
 //     return view('welcome');
@@ -26,3 +27,10 @@ Route::get('managementStaff/dashboard', function () {
 });
 
 Route::get('admin/managementStaff/list', [ManagementStaffController::class, 'index']);
+
+//Lecturer
+Route::get('lecturers/dashboard', function () {
+    return view('lecturers.dashboard');
+});
+
+Route::get('admin/lecturers/list', [LecturerController::class, 'index']);
