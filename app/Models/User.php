@@ -121,4 +121,26 @@ class User extends Authenticatable
 
         return $return;
     }
+
+    static public function getStudentsRec(){
+
+        $return = self::SELECT('users.*')
+                        ->WHERE('users.role','=','Student');
+
+                        //Search Filters applied to Management staff user List
+                        if (!empty(Request::get('name'))) {
+                            $return = $return->WHERE('first_name','LIKE', '%'.Request::get('name').'%')
+                                                ->ORWHERE('last_name','LIKE', '%'.Request::get('name').'%');
+                        }
+
+                        if (!empty(Request::get('email'))) {
+                            $return = $return->WHERE('email','LIKE', '%'.Request::get('email').'%');
+                        }
+
+        $return = $return->WHERE('role','=','Student')
+                            ->ORDERBY('id', 'asc')
+                            ->paginate(5);
+
+        return $return;
+    }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ManagementStaffController;
 use App\Http\Controllers\LecturerController;
+use App\Http\Controllers\StudentsController;
 
 // Route::get('admin/dashboard', function () {
 //     return view('welcome');
@@ -34,3 +35,10 @@ Route::get('lecturers/dashboard', function () {
 });
 
 Route::get('admin/lecturers/list', [LecturerController::class, 'index']);
+
+//Students
+Route::get('students/dashboard', function () {
+    return view('students.dashboard');
+});
+
+Route::get('admin/students/list', [StudentsController::class, 'index']);
