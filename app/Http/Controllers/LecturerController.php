@@ -45,7 +45,7 @@ class LecturerController extends Controller
             $file = $request->file('prof_pic');
             $extension = $file->getClientOriginalExtension();
 
-            $fileName = $request->emp_id . '_' . date("Ymd").time() . '.' . $extension;
+            $fileName = $request->email . '_' . date("Ymd").time() . '.' . $extension;
 
             $file->move('uploads/profile_img/', $fileName);
         }
