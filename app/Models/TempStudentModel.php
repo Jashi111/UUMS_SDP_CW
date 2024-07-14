@@ -14,4 +14,13 @@ class TempStudentModel extends Model
         'addedby',
         'addeddate',
     ];
+
+    static public function getTempStudentRec($email){
+
+        $return = self::WHERE('email', $email)
+                        ->first();
+
+        return $return;
+
+    }
 }

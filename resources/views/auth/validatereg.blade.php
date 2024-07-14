@@ -45,12 +45,17 @@
 
           @include('message')
 
-          <form action="" method="post">
+          <form action="{{ url('students/prereg/verify') }}" method="post">
             @csrf
             <!-- User ID input -->
             <div class="form-outline mb-4">
-              <input type="text" name="email" id="email" class="form-control" placeholder="Email" required />
+              <input type="text" name="email" id="email" class="form-control" value="{{ $fetchedRecord->email}}" placeholder="Email" required readonly/>
               <label class="form-label" for="email">Email</label>
+            </div>
+
+            <div class="form-outline mb-4">
+              <input type="text" name="otp" id="otp" class="form-control" placeholder="OTP" required />
+              <label class="form-label" for="otp">OTP</label>
             </div>
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\TempStudentModel;
 
 class AuthController extends Controller
 {
@@ -75,4 +76,39 @@ class AuthController extends Controller
 
     }
     
+    public function veriEmail(Request $request){
+
+        $fetchTempStudentRec = TempStudentModel::getTempStudentRec($request->email);
+
+        if(!empty($fetchTempStudentRec)){
+
+            $data['fetchedRecord'] = $fetchTempStudentRec;
+            return view('auth.validatereg', $data);
+
+
+        }
+        else {
+
+            return redirect('students/prereg')->with('error', 'Please Enter Correct email');
+
+        }
+
+    }
+
+    public function validateEmail(Request $request) {
+        
+        $fetchTempStudentRec = TempStudentModel::getTempStudentRec($request->email);
+
+        if ($fetchTempStudentRec->otp == $request->otp){
+
+            dd("true");
+
+        }
+        else {
+
+            return redirect()->back()->with('error', 'Please Enter Correct OTP');
+
+        }
+
+    }
 }

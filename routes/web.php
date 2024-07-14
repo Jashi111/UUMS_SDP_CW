@@ -17,6 +17,8 @@ Route::get('logout', [AuthController::class, 'authLogout']);
 
 
 Route::get('students/prereg', [AuthController::class, 'preReg']);
+Route::post('students/prereg', [AuthController::class, 'veriEmail']);
+Route::post('students/prereg/verify', [AuthController::class, 'validateEmail']);
 
 //admin
 Route::get('admin/dashboard', function () {
