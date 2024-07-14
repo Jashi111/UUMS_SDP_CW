@@ -101,7 +101,8 @@ class AuthController extends Controller
 
         if ($fetchTempStudentRec->otp == $request->otp){
 
-            dd("true");
+            $data['fetchedRecord'] = $fetchTempStudentRec;
+            return view('student.add', $data);
 
         }
         else {

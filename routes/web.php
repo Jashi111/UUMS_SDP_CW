@@ -79,3 +79,7 @@ Route::post('managementStaff/lecturers/{id}/edit', [LecturerController::class, '
 Route::get('managementStaff/students/list', [StudentsController::class, 'index']);
 Route::get('managementStaff/students/add', [StudentsController::class, 'create']);
 Route::post('managementStaff/students/add', [StudentsController::class, 'store']);
+
+//Student Login
+Route::get('student/add', [StudentsController::class, 'createNewStudent']);
+Route::post('student/add', [StudentsController::class, 'storeNewStudent']);
