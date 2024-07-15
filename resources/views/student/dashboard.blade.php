@@ -34,8 +34,8 @@
           <div class="col-lg-4 col-6">
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>Grades</h3>
-                <p>Exam Grades</p>
+                <h3>Study Analytics</h3>
+                <p>Exam Grades & Reports</p>
               </div>
               <div class="icon">
                 <i class="fa-solid fa-book-open"></i>
