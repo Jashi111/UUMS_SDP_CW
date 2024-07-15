@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\LecturerMaterialModel;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LecturerController extends Controller
 {
@@ -168,4 +170,54 @@ class LecturerController extends Controller
 
         return redirect('admin/lecturers/list')->with('success', 'Lecturer info Deleted Succesfully');
     }
+
+    public function indexLM()
+    {
+        $data['fetchedRecord'] = LecturerMaterialModel::getLMRec();
+        $data['headerTitle'] = 'Lecture Material List';
+        return view('lecturer.list', $data);
+        
+    }
+
+    public function createLM()
+    {
+        $data['headerTitle'] = 'Add New Lecture Material';
+        return view('lecturer.add', $data);
+    }
+
+    public function storeLM(Request $request){
+        $request->validate([
+            'subject' => 'required|string',
+            'document_name' => 'required|string',
+            'file' => 'required|mimes:png,jpg,jpeg,webp,pdf,docx',
+
+        ]);
+
+        if ($request->has('file')) {
+            
+            $file = $request->file('file');
+            $extension = $file->getClientOriginalExtension();
+
+            $fileName = $request->subject . '_' . date("Ymd").time() . '.' . $extension;
+
+            $file->move('uploads/lMaterials/', $fileName);
+        }
+
+        $mat = new LecturerMaterialModel();
+
+        $mat->subject = trim($request->subject);
+        $mat->document_name = trim($request->document_name);
+
+        $mat->file = $fileName;
+
+        $mat->lecturer = Auth::user()->email;
+        $mat->addeddate = now();
+
+
+        $mat->save();
+
+        return redirect('studyMaterials')->with('success', 'Materials Added Succesfully');
+    } 
+
+    
 }

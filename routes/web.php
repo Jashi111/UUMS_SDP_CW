@@ -55,6 +55,10 @@ Route::get('admin/lecturers/{id}/edit', [LecturerController::class, 'edit']);
 Route::post('admin/lecturers/{id}/edit', [LecturerController::class, 'update']);
 Route::get('admin/lecturers/{id}/delete', [LecturerController::class, 'destroy']);
 
+Route::get('studyMaterials', [LecturerController::class, 'indexLM']);
+Route::get('lecturer/add', [LecturerController::class, 'createLM']);
+Route::post('lecturer/add', [LecturerController::class, 'storeLM']);
+
 //Students
 Route::get('student/dashboard', [DashboardController::class, 'index']);
 
