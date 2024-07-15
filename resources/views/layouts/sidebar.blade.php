@@ -150,6 +150,96 @@
                 </a>
               </li>
 
+
+              @elseif (Auth::user()->role == 'Lecturer')
+          <li class="nav-item">
+              <a href="{{ url('lecturer/dashboard') }}" class="nav-link @if(Request::segment(2) == 'dashboard') ? active @endif">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item @if(Request::segment(2) == 'managementStaff' OR Request::segment(2) == 'lecturers' OR Request::segment(2) == 'students') ? menu-open @endif">
+                <a href="" class="nav-link @if(Request::segment(2) == 'managementStaff' OR Request::segment(2) == 'lecturers' OR Request::segment(2) == 'students') ? active @endif">
+                  <i class="nav-icon fas fa-user-tie"></i>
+                  <p>
+                    User Management
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+
+                  <li class="nav-item">
+                    <a href="{{ url('managementStaff/students/list') }}" class="nav-link @if(Request::segment(2) == 'students') ? active @endif">
+                      <i class="nav-icon fas"></i>
+                      <i class="nav-icon fas fa-graduation-cap"></i>
+                      <p>
+                        Students
+                      </p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('studyMaterials') }}" class="nav-link">
+                  <i class="nav-icon fas fa-book-open"></i>
+                  <p>
+                    Study Materials
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('profile') }}" class="nav-link @if(Request::segment(1) == 'profile') ? active @endif">
+                  <i class="nav-icon fas fa-address-card"></i>
+                  <p>
+                    Profile
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('logout') }}" class="nav-link">
+                  <i class="nav-icon fas fa-arrow-down"></i>
+                  <p>
+                    Logout
+                  </p>
+                </a>
+              </li>
+
+          @elseif (Auth::user()->role == 'Student')
+          <li class="nav-item">
+              <a href="{{ url('student/dashboard') }}" class="nav-link @if(Request::segment(2) == 'dashboard') ? active @endif">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('studyMaterials') }}" class="nav-link">
+                  <i class="nav-icon fas fa-book-open"></i>
+                  <p>
+                    Study Materials
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('profile') }}" class="nav-link @if(Request::segment(1) == 'profile') ? active @endif">
+                  <i class="nav-icon fas fa-address-card"></i>
+                  <p>
+                    Profile
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('logout') }}" class="nav-link">
+                  <i class="nav-icon fas fa-arrow-down"></i>
+                  <p>
+                    Logout
+                  </p>
+                </a>
+              </li>
+
           @endif
           
 
